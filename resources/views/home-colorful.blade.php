@@ -64,36 +64,48 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-pink-200 hover:shadow-xl hover:shadow-pink-500/5 transition duration-300">
-                    <div class="w-14 h-14 gradient-accent rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                        </svg>
+                <div class="group relative rounded-2xl p-8 overflow-hidden hover:shadow-2xl transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-500 via-rose-500 to-orange-400 opacity-90"></div>
+                    <div class="absolute inset-0 bg-white/5"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold rounded-full mb-4">人気No.1</span>
+                        <h3 class="text-xl font-bold text-white mb-3">ショート動画</h3>
+                        <p class="text-white/90 leading-relaxed">TikTok、Instagram Reels、YouTube Shorts向けの縦型ショート動画を制作。月間100本以上の納品実績。</p>
                     </div>
-                    <span class="inline-block px-3 py-1 gradient-accent text-white text-xs font-bold rounded-full mb-4">人気No.1</span>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">ショート動画</h3>
-                    <p class="text-gray-600 leading-relaxed">TikTok、Instagram Reels、YouTube Shorts向けの縦型ショート動画を制作。月間100本以上の納品実績。</p>
                 </div>
 
-                <div class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-500/5 transition duration-300">
-                    <div class="w-14 h-14 bg-gradient-to-r from-orange-400 to-amber-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                        </svg>
+                <div class="group relative rounded-2xl p-8 overflow-hidden hover:shadow-2xl transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-orange-400 via-amber-500 to-yellow-400 opacity-90"></div>
+                    <div class="absolute inset-0 bg-white/5"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">横動画</h3>
+                        <p class="text-white/90 leading-relaxed">YouTube動画や企業VP、プロモーション動画など、横型動画の編集を行います。</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">横動画</h3>
-                    <p class="text-gray-600 leading-relaxed">YouTube動画や企業VP、プロモーション動画など、横型動画の編集を行います。</p>
                 </div>
 
-                <div class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-purple-200 hover:shadow-xl hover:shadow-purple-500/5 transition duration-300">
-                    <div class="w-14 h-14 bg-gradient-to-r from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                <div class="group relative rounded-2xl p-8 overflow-hidden hover:shadow-2xl transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500 via-fuchsia-500 to-pink-500 opacity-90"></div>
+                    <div class="absolute inset-0 bg-white/5"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        </svg>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">撮影</h3>
+                        <p class="text-white/90 leading-relaxed">SONY FX-3を使用したプロフェッショナルな撮影サービス。</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">撮影</h3>
-                    <p class="text-gray-600 leading-relaxed">SONY FX-3を使用したプロフェッショナルな撮影サービス。</p>
                 </div>
             </div>
         </div>
@@ -144,17 +156,18 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 bg-white">
+    <section class="py-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="relative bg-gradient-to-r from-pink-50 to-orange-50 rounded-3xl p-12 text-center overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-pink-200 to-orange-200 rounded-full blur-3xl opacity-30 translate-x-1/2 -translate-y-1/2"></div>
+            <div class="relative gradient-accent rounded-3xl p-12 text-center overflow-hidden">
+                <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
                 <div class="relative">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">お気軽にご相談ください</h2>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">お気軽にご相談ください</h2>
+                    <p class="text-white/90 mb-8 leading-relaxed">
                         動画制作のご依頼・ご相談は下記よりお問い合わせください。<br>
                         お見積りは無料です。
                     </p>
-                    <a href="{{ route('contact') }}?design=colorful" class="inline-flex items-center px-8 py-4 gradient-accent rounded-full text-white font-bold shadow-lg shadow-pink-500/25 hover:shadow-xl hover:shadow-pink-500/30 transform hover:scale-105 transition">
+                    <a href="{{ route('contact') }}?design=colorful" class="inline-flex items-center px-8 py-4 bg-white rounded-full text-pink-600 font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition">
                         お問い合わせはこちら
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

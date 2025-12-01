@@ -140,16 +140,17 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 bg-white">
+    <section class="py-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="relative bg-gradient-to-r from-pink-50 to-orange-50 rounded-3xl p-12 text-center overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-pink-200 to-orange-200 rounded-full blur-3xl opacity-30 translate-x-1/2 -translate-y-1/2"></div>
+            <div class="relative gradient-accent rounded-3xl p-12 text-center overflow-hidden">
+                <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
                 <div class="relative">
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">お見積り無料</h2>
-                    <p class="text-gray-600 mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">お見積り無料</h2>
+                    <p class="text-white/90 mb-8">
                         プロジェクトの詳細をお聞かせください。最適なプランをご提案いたします。
                     </p>
-                    <a href="{{ route('contact') }}?design=colorful" class="inline-flex items-center px-8 py-4 gradient-accent rounded-full text-white font-bold shadow-lg shadow-pink-500/25 hover:shadow-xl hover:shadow-pink-500/30 transform hover:scale-105 transition">
+                    <a href="{{ route('contact') }}?design=colorful" class="inline-flex items-center px-8 py-4 bg-white rounded-full text-pink-600 font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition">
                         無料相談はこちら
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

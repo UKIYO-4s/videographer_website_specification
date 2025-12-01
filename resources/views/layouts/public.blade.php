@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="{{ \App\Models\SiteSetting::get('site_description', '内田敬 - 動画編集・撮影サービス') }}">
+    <meta name="description" content="{{ \App\Models\SiteSetting::get('site_description', '内田たかし - 動画編集・撮影サービス') }}">
 
-    <title>@yield('title', \App\Models\SiteSetting::get('site_title', 'Kei Uchida | Videographer'))</title>
+    <title>@yield('title', \App\Models\SiteSetting::get('site_title', 'Takashi Uchida | Videographer'))</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
@@ -26,7 +26,7 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <a href="{{ route('home') }}" class="text-xl font-bold text-white hover:text-purple-400 transition">
-                        {{ \App\Models\SiteSetting::get('owner_name_en', 'Kei Uchida') }}
+                        {{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }}
                     </a>
                 </div>
 
@@ -34,7 +34,6 @@
                     <a href="{{ route('home') }}" class="text-gray-300 hover:text-white transition {{ request()->routeIs('home') ? 'text-white' : '' }}">ホーム</a>
                     <a href="{{ route('gallery') }}" class="text-gray-300 hover:text-white transition {{ request()->routeIs('gallery') ? 'text-white' : '' }}">実績</a>
                     <a href="{{ route('pricing') }}" class="text-gray-300 hover:text-white transition {{ request()->routeIs('pricing') ? 'text-white' : '' }}">料金</a>
-                    <a href="{{ route('equipment') }}" class="text-gray-300 hover:text-white transition {{ request()->routeIs('equipment') ? 'text-white' : '' }}">機材</a>
                     <a href="{{ route('contact') }}" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-medium hover:from-purple-700 hover:to-pink-700 transition">
                         お問い合わせ
                     </a>
@@ -55,7 +54,6 @@
                 <a href="{{ route('home') }}" class="block py-2 text-gray-300 hover:text-white">ホーム</a>
                 <a href="{{ route('gallery') }}" class="block py-2 text-gray-300 hover:text-white">実績</a>
                 <a href="{{ route('pricing') }}" class="block py-2 text-gray-300 hover:text-white">料金</a>
-                <a href="{{ route('equipment') }}" class="block py-2 text-gray-300 hover:text-white">機材</a>
                 <a href="{{ route('contact') }}" class="block py-2 text-purple-400 hover:text-purple-300">お問い合わせ</a>
             </div>
         </div>
@@ -69,9 +67,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-lg font-bold mb-4">{{ \App\Models\SiteSetting::get('owner_name_en', 'Kei Uchida') }}</h3>
+                    <h3 class="text-lg font-bold mb-4">{{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }}</h3>
                     <p class="text-gray-400 text-sm">
-                        {{ \App\Models\SiteSetting::get('owner_name', '内田敬') }}<br>
+                        {{ \App\Models\SiteSetting::get('owner_name', '内田たかし') }}<br>
                         動画編集・撮影サービス
                     </p>
                 </div>
@@ -81,7 +79,6 @@
                         <li><a href="{{ route('home') }}" class="hover:text-white transition">ホーム</a></li>
                         <li><a href="{{ route('gallery') }}" class="hover:text-white transition">実績</a></li>
                         <li><a href="{{ route('pricing') }}" class="hover:text-white transition">料金</a></li>
-                        <li><a href="{{ route('equipment') }}" class="hover:text-white transition">機材</a></li>
                         <li><a href="{{ route('contact') }}" class="hover:text-white transition">お問い合わせ</a></li>
                     </ul>
                 </div>
@@ -95,8 +92,8 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                <p>&copy; {{ date('Y') }} {{ \App\Models\SiteSetting::get('owner_name', '内田敬') }}. All rights reserved.</p>
-                <p class="mt-2 text-xs">運営者: {{ \App\Models\SiteSetting::get('owner_name', '内田敬') }} ({{ \App\Models\SiteSetting::get('owner_name_en', 'Kei Uchida') }})</p>
+                <p>&copy; {{ date('Y') }} {{ \App\Models\SiteSetting::get('owner_name', '内田たかし') }}. All rights reserved.</p>
+                <p class="mt-2 text-xs">運営者: {{ \App\Models\SiteSetting::get('owner_name', '内田たかし') }} ({{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }})</p>
             </div>
         </div>
     </footer>

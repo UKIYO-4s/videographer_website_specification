@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', '料金プラン | ' . \App\Models\SiteSetting::get('site_title', 'Kei Uchida'))
+@section('title', '料金プラン | ' . \App\Models\SiteSetting::get('site_title', 'Takashi Uchida'))
 
 @section('content')
     <section class="py-24 bg-gray-900">
@@ -10,12 +10,20 @@
                 <p class="text-gray-400">料金プラン</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Highlight: Short Videos -->
+            <div class="mb-16">
+                <div class="text-center mb-8">
+                    <span class="inline-block px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-sm font-semibold mb-4">月間100本以上の納品実績</span>
+                    <h2 class="text-2xl font-bold">ショート動画が得意です</h2>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 @foreach($plans as $index => $plan)
-                    <div class="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-purple-500 transition {{ $index === 1 ? 'md:scale-105 border-purple-500' : '' }}">
-                        @if($index === 1)
+                    <div class="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-purple-500 transition {{ $index === 0 ? 'md:scale-105 border-purple-500 lg:col-span-1' : '' }}">
+                        @if($index === 0)
                             <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                                <span class="px-4 py-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-sm font-semibold">人気</span>
+                                <span class="px-4 py-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-sm font-semibold">人気No.1</span>
                             </div>
                         @endif
                         <h3 class="text-xl font-bold mb-2">{{ $plan->name }}</h3>
@@ -36,11 +44,68 @@
                                 @endforeach
                             </ul>
                         @endif
-                        <a href="{{ route('contact') }}" class="block text-center py-3 {{ $index === 1 ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white' : 'border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white' }} rounded-full font-semibold transition">
+                        <a href="{{ route('contact') }}" class="block text-center py-3 {{ $index === 0 ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white' : 'border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white' }} rounded-full font-semibold transition">
                             お問い合わせ
                         </a>
                     </div>
                 @endforeach
+            </div>
+
+            <!-- Equipment Info for Shooting -->
+            <div class="mt-24 max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12">撮影機材</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700">
+                        <span class="px-3 py-1 bg-purple-600/20 text-purple-400 rounded-full text-sm">カメラ</span>
+                        <h3 class="text-2xl font-bold mt-4 mb-4">SONY FX-3</h3>
+                        <p class="text-gray-400 text-sm mb-4">シネマティックな映像を撮影できるフルサイズセンサー搭載のシネマカメラ。4K 120fps撮影対応。</p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-purple-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                フルサイズセンサー
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-purple-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                4K 120fps対応
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-purple-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                S-Cinetone搭載
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700">
+                        <span class="px-3 py-1 bg-purple-600/20 text-purple-400 rounded-full text-sm">レンズ</span>
+                        <h3 class="text-2xl font-bold mt-4 mb-4">FE 24-70mm F2.8 GM II</h3>
+                        <p class="text-gray-400 text-sm mb-4">ソニー最高峰Gマスターシリーズの標準ズームレンズ。圧倒的な解像力と美しいボケ味。</p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-purple-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                F2.8通しの明るさ
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-purple-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                高速・高精度AF
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-purple-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                防塵防滴設計
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <!-- Notes -->

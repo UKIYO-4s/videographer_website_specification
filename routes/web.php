@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PricingController;
@@ -15,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/demo', [HomeController::class, 'demo'])->name('demo');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/pricing', [PricingController::class, 'index'])->name('pricing');
-Route::get('/equipment', [EquipmentController::class, 'index'])->name('equipment');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/contact/thanks', [ContactController::class, 'thanks'])->name('contact.thanks');

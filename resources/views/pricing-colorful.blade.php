@@ -3,36 +3,32 @@
 @section('title', '料金プラン | ' . \App\Models\SiteSetting::get('site_title', 'Takashi Uchida'))
 
 @section('content')
-    <section class="py-20">
+    <section class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <div class="glass-card inline-block px-6 py-2 rounded-full mb-6">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-500 font-bold text-sm">
-                        PRICING
-                    </span>
-                </div>
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">料金プラン</h1>
-                <p class="text-gray-600">シンプルで分かりやすい料金体系</p>
+                <span class="gradient-text font-bold text-sm tracking-wider">PRICING</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2">料金プラン</h1>
+                <p class="text-gray-500 mt-4">シンプルで分かりやすい料金体系</p>
             </div>
 
             <!-- Highlight -->
             <div class="text-center mb-12">
-                <div class="inline-block px-6 py-3 bg-gradient-to-r from-pink-500 via-orange-500 to-yellow-500 rounded-full text-white font-bold shadow-lg">
+                <div class="inline-block px-6 py-3 gradient-accent rounded-full text-white font-bold shadow-lg shadow-pink-500/25">
                     月間100本以上の納品実績
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 @foreach($plans as $index => $plan)
-                    <div class="relative glass-card rounded-3xl p-8 hover:shadow-2xl transition transform hover:-translate-y-2 {{ $index === 0 ? 'ring-4 ring-pink-400 md:scale-105' : '' }}">
+                    <div class="relative bg-white rounded-2xl p-8 border {{ $index === 0 ? 'border-pink-200 shadow-xl shadow-pink-500/5' : 'border-gray-100 hover:border-pink-200' }} hover:shadow-xl hover:shadow-pink-500/5 transition duration-300 {{ $index === 0 ? 'md:scale-105' : '' }}">
                         @if($index === 0)
                             <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                                <span class="px-4 py-2 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full text-sm font-bold text-white shadow-lg">人気No.1</span>
+                                <span class="px-4 py-2 gradient-accent rounded-full text-sm font-bold text-white shadow-lg">人気No.1</span>
                             </div>
                         @endif
-                        <h3 class="text-xl font-bold text-gray-800 mb-2 mt-2">{{ $plan->name }}</h3>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 mt-2">{{ $plan->name }}</h3>
                         <div class="flex items-baseline mb-6">
-                            <span class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-500">{{ $plan->formatted_price }}</span>
+                            <span class="text-4xl font-bold gradient-text">{{ $plan->formatted_price }}</span>
                             <span class="text-gray-500 ml-2">/ {{ $plan->unit }}</span>
                         </div>
                         <p class="text-gray-600 text-sm mb-6">{{ $plan->description }}</p>
@@ -48,7 +44,7 @@
                                 @endforeach
                             </ul>
                         @endif
-                        <a href="{{ route('contact') }}?design=colorful" class="block text-center py-3 {{ $index === 0 ? 'bg-gradient-to-r from-pink-500 via-orange-500 to-yellow-500 text-white' : 'border-2 border-pink-400 text-pink-500 hover:bg-pink-500 hover:text-white' }} rounded-full font-bold transition">
+                        <a href="{{ route('contact') }}?design=colorful" class="block text-center py-3 rounded-full font-bold transition {{ $index === 0 ? 'gradient-accent text-white shadow-lg shadow-pink-500/25 hover:shadow-xl' : 'border-2 border-pink-300 text-pink-500 hover:bg-pink-50' }}">
                             お問い合わせ
                         </a>
                     </div>
@@ -56,15 +52,16 @@
             </div>
 
             <!-- Equipment Info -->
-            <div class="mt-20 max-w-4xl mx-auto">
+            <div class="mt-24 max-w-4xl mx-auto">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">撮影機材</h2>
-                    <p class="text-gray-600">プロフェッショナルな機材で高品質な映像を</p>
+                    <span class="gradient-text font-bold text-sm tracking-wider">EQUIPMENT</span>
+                    <h2 class="text-3xl font-bold text-gray-900 mt-2">撮影機材</h2>
+                    <p class="text-gray-500 mt-4">プロフェッショナルな機材で高品質な映像を</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="glass-card rounded-3xl p-8 hover:shadow-2xl transition">
-                        <span class="inline-block px-4 py-1 bg-gradient-to-r from-pink-500 to-orange-500 text-white text-sm font-bold rounded-full mb-4">カメラ</span>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">SONY FX-3</h3>
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-pink-200 hover:shadow-xl hover:shadow-pink-500/5 transition duration-300">
+                        <span class="inline-block px-4 py-1 gradient-accent text-white text-sm font-bold rounded-full mb-4">カメラ</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">SONY FX-3</h3>
                         <p class="text-gray-600 text-sm mb-4">シネマティックな映像を撮影できるフルサイズセンサー搭載のシネマカメラ。</p>
                         <ul class="space-y-2 text-sm text-gray-700">
                             <li class="flex items-center">
@@ -87,9 +84,9 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="glass-card rounded-3xl p-8 hover:shadow-2xl transition">
-                        <span class="inline-block px-4 py-1 bg-gradient-to-r from-orange-500 to-yellow-500 text-white text-sm font-bold rounded-full mb-4">レンズ</span>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">FE 24-70mm F2.8 GM II</h3>
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-500/5 transition duration-300">
+                        <span class="inline-block px-4 py-1 bg-gradient-to-r from-orange-400 to-amber-400 text-white text-sm font-bold rounded-full mb-4">レンズ</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">FE 24-70mm F2.8 GM II</h3>
                         <p class="text-gray-600 text-sm mb-4">ソニー最高峰Gマスターシリーズの標準ズームレンズ。</p>
                         <ul class="space-y-2 text-sm text-gray-700">
                             <li class="flex items-center">
@@ -117,8 +114,8 @@
 
             <!-- Notes -->
             <div class="mt-16 max-w-3xl mx-auto">
-                <div class="glass-card rounded-3xl p-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">ご注意事項</h3>
+                <div class="bg-white rounded-2xl p-8 border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6 text-center">ご注意事項</h3>
                     <ul class="space-y-3 text-gray-600 text-sm">
                         <li class="flex items-start">
                             <span class="text-pink-500 mr-2 font-bold">*</span>
@@ -143,19 +140,22 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16">
+    <section class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-card rounded-3xl p-12 text-center shadow-2xl">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">お見積り無料</h2>
-                <p class="text-gray-600 mb-8">
-                    プロジェクトの詳細をお聞かせください。最適なプランをご提案いたします。
-                </p>
-                <a href="{{ route('contact') }}?design=colorful" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 via-orange-500 to-yellow-500 rounded-full text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition">
-                    無料相談はこちら
-                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </a>
+            <div class="relative bg-gradient-to-r from-pink-50 to-orange-50 rounded-3xl p-12 text-center overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-pink-200 to-orange-200 rounded-full blur-3xl opacity-30 translate-x-1/2 -translate-y-1/2"></div>
+                <div class="relative">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">お見積り無料</h2>
+                    <p class="text-gray-600 mb-8">
+                        プロジェクトの詳細をお聞かせください。最適なプランをご提案いたします。
+                    </p>
+                    <a href="{{ route('contact') }}?design=colorful" class="inline-flex items-center px-8 py-4 gradient-accent rounded-full text-white font-bold shadow-lg shadow-pink-500/25 hover:shadow-xl hover:shadow-pink-500/30 transform hover:scale-105 transition">
+                        無料相談はこちら
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>

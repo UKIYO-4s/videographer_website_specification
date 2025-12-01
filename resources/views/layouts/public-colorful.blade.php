@@ -17,18 +17,35 @@
     <style>
         body {
             font-family: 'Noto Sans JP', 'Figtree', sans-serif;
-            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 25%, #48dbfb 50%, #ff9ff3 75%, #ff6b6b 100%);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background: #fafafa;
         }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .gradient-accent {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #fda085 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #fda085 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-border {
+            position: relative;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #fda085 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
         .phone-frame {
             border-radius: 40px;

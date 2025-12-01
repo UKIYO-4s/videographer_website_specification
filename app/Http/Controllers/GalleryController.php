@@ -18,6 +18,16 @@ class GalleryController extends Controller
         $videos = $query->get();
         $category = $request->category;
 
-        return view('gallery', compact('videos', 'category'));
+        $design = $request->query('design', 'default');
+
+        $viewMap = [
+            'colorful' => 'gallery-colorful',
+            'minimal' => 'gallery-minimal',
+            'default' => 'gallery',
+        ];
+
+        $view = $viewMap[$design] ?? 'gallery';
+
+        return view($view, compact('videos', 'category', 'design'));
     }
 }

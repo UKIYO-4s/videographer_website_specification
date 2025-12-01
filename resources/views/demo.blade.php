@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>デザインデモ - {{ \App\Models\SiteSetting::get('owner_name', '内田たかし') }}</title>
+    <title>デザインデモ - {{ \App\Models\SiteSetting::get('owner_name', '内田敬') }}</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=noto-sans-jp:400,500,600,700&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -15,7 +15,7 @@
     <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
             <h1 class="text-4xl font-bold text-gray-800 mb-4">デザインデモ選択</h1>
-            <p class="text-gray-600">{{ \App\Models\SiteSetting::get('owner_name', '内田たかし') }}様のコーポレートサイト</p>
+            <p class="text-gray-600">{{ \App\Models\SiteSetting::get('owner_name', '内田敬') }}様のコーポレートサイト</p>
             <p class="text-gray-500 text-sm mt-2">お好みのデザインをクリックしてプレビューしてください</p>
         </div>
 

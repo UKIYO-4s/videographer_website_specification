@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="{{ \App\Models\SiteSetting::get('site_description', '内田たかし - 動画編集・撮影サービス') }}">
+    <meta name="description" content="{{ \App\Models\SiteSetting::get('site_description', '内田敬 - 動画編集・撮影サービス') }}">
 
     <title>@yield('title', \App\Models\SiteSetting::get('site_title', 'Takashi Uchida | Videographer'))</title>
 
@@ -68,8 +68,8 @@
             <p class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-orange-500 to-yellow-500 mb-4">
                 {{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }}
             </p>
-            <p class="text-gray-600">{{ \App\Models\SiteSetting::get('owner_name', '内田たかし') }} - 動画編集・撮影サービス</p>
-            <p class="text-gray-400 text-sm mt-4">&copy; {{ date('Y') }} {{ \App\Models\SiteSetting::get('owner_name', '内田たかし') }}. All rights reserved.</p>
+            <p class="text-gray-600">{{ \App\Models\SiteSetting::get('owner_name', '内田敬') }} - 動画編集・撮影サービス</p>
+            <p class="text-gray-400 text-sm mt-4">&copy; {{ date('Y') }} {{ \App\Models\SiteSetting::get('owner_name', '内田敬') }}. All rights reserved.</p>
         </div>
     </footer>
 

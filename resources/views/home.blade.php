@@ -18,7 +18,7 @@
                 </span>
             </h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-4">
-                {{ $settings['owner_name'] ?? '内田たかし' }}
+                {{ $settings['owner_name'] ?? '内田敬' }}
             </p>
             <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
                 Videographer / Video Editor

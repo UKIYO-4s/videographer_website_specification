@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="{{ \App\Models\SiteSetting::get('site_description', '内田たかし - 動画編集・撮影サービス') }}">
+    <meta name="description" content="{{ \App\Models\SiteSetting::get('site_description', '内田敬 - 動画編集・撮影サービス') }}">
 
     <title>@yield('title', \App\Models\SiteSetting::get('site_title', 'Takashi Uchida | Videographer'))</title>
 
@@ -51,7 +51,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div>
                     <p class="text-2xl font-light">{{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }}</p>
-                    <p class="text-gray-500 mt-2">{{ \App\Models\SiteSetting::get('owner_name', '内田たかし') }}</p>
+                    <p class="text-gray-500 mt-2">{{ \App\Models\SiteSetting::get('owner_name', '内田敬') }}</p>
                 </div>
                 <div class="mt-8 md:mt-0">
                     <p class="text-gray-400 text-sm">&copy; {{ date('Y') }} All rights reserved.</p>

@@ -16,7 +16,7 @@
                     <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
                         {{ $settings['owner_name_en'] ?? 'Takashi Uchida' }}
                     </h1>
-                    <p class="text-xl text-gray-600 mb-2">{{ $settings['owner_name'] ?? '内田たかし' }}</p>
+                    <p class="text-xl text-gray-600 mb-2">{{ $settings['owner_name'] ?? '内田敬' }}</p>
                     <p class="text-lg text-gray-500 mb-6">Videographer / Video Editor</p>
                     <p class="text-gray-600 mb-8 max-w-lg">
                         {{ $settings['profile_text'] ?? 'ショート動画を得意とするビデオグラファー。SNS向けの縦動画から企業VPまで幅広く対応。' }}

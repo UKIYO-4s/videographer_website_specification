@@ -8,6 +8,7 @@ class PricingPlan extends Model
 {
     protected $fillable = [
         'name',
+        'category',
         'price',
         'unit',
         'description',
@@ -28,6 +29,9 @@ class PricingPlan extends Model
 
     public function getFormattedPriceAttribute()
     {
+        if ($this->price === 0) {
+            return 'ASK';
+        }
         return '¥' . number_format($this->price);
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'お問い合わせ | ' . \App\Models\SiteSetting::get('site_title', 'Kei Uchida'))
+@section('title', 'お問い合わせ | ' . \App\Models\SiteSetting::get('site_title', 'Takashi Uchida'))
 
 @section('content')
     <section class="py-24 bg-gray-900">
@@ -10,125 +10,39 @@
                 <p class="text-gray-400">お問い合わせ</p>
             </div>
 
-            <div class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 md:p-12 border border-gray-700">
-                <form action="{{ route('contact.store') }}" method="POST" class="space-y-6">
-                    @csrf
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">
-                                お名前 <span class="text-pink-500">*</span>
-                            </label>
-                            <input type="text" name="name" id="name" required value="{{ old('name') }}"
-                                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
-                                placeholder="山田 太郎">
-                            @error('name')
-                                <p class="mt-1 text-sm text-pink-500">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">
-                                メールアドレス <span class="text-pink-500">*</span>
-                            </label>
-                            <input type="email" name="email" id="email" required value="{{ old('email') }}"
-                                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
-                                placeholder="example@email.com">
-                            @error('email')
-                                <p class="mt-1 text-sm text-pink-500">{{ $message }}</p>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">
-                                電話番号
-                            </label>
-                            <input type="tel" name="phone" id="phone" value="{{ old('phone') }}"
-                                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
-                                placeholder="090-1234-5678">
-                            @error('phone')
-                                <p class="mt-1 text-sm text-pink-500">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="inquiry_type" class="block text-sm font-medium text-gray-300 mb-2">
-                                お問い合わせ種別 <span class="text-pink-500">*</span>
-                            </label>
-                            <select name="inquiry_type" id="inquiry_type" required
-                                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition">
-                                <option value="">選択してください</option>
-                                <option value="short" {{ old('inquiry_type') === 'short' ? 'selected' : '' }}>ショート動画</option>
-                                <option value="horizontal" {{ old('inquiry_type') === 'horizontal' ? 'selected' : '' }}>横動画</option>
-                                <option value="shooting" {{ old('inquiry_type') === 'shooting' ? 'selected' : '' }}>撮影</option>
-                                <option value="other" {{ old('inquiry_type') === 'other' ? 'selected' : '' }}>その他</option>
-                            </select>
-                            @error('inquiry_type')
-                                <p class="mt-1 text-sm text-pink-500">{{ $message }}</p>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="budget" class="block text-sm font-medium text-gray-300 mb-2">
-                            ご予算
-                        </label>
-                        <select name="budget" id="budget"
-                            class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition">
-                            <option value="">選択してください</option>
-                            <option value="〜5万円" {{ old('budget') === '〜5万円' ? 'selected' : '' }}>〜5万円</option>
-                            <option value="5万円〜10万円" {{ old('budget') === '5万円〜10万円' ? 'selected' : '' }}>5万円〜10万円</option>
-                            <option value="10万円〜30万円" {{ old('budget') === '10万円〜30万円' ? 'selected' : '' }}>10万円〜30万円</option>
-                            <option value="30万円〜" {{ old('budget') === '30万円〜' ? 'selected' : '' }}>30万円〜</option>
-                            <option value="相談したい" {{ old('budget') === '相談したい' ? 'selected' : '' }}>相談したい</option>
-                        </select>
-                        @error('budget')
-                            <p class="mt-1 text-sm text-pink-500">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">
-                            お問い合わせ内容 <span class="text-pink-500">*</span>
-                        </label>
-                        <textarea name="message" id="message" rows="6" required
-                            class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition resize-none"
-                            placeholder="ご依頼内容、ご質問などをお書きください">{{ old('message') }}</textarea>
-                        @error('message')
-                            <p class="mt-1 text-sm text-pink-500">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="text-center pt-4">
-                        <button type="submit" class="px-12 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition transform hover:scale-105">
-                            送信する
-                        </button>
-                    </div>
-                </form>
+            <div class="text-center mb-12">
+                <p class="text-gray-300 text-lg">お気軽にご連絡ください</p>
             </div>
 
             <!-- Contact Info -->
-            <div class="mt-12 grid md:grid-cols-2 gap-8">
-                <div class="bg-gray-800/50 rounded-2xl p-6 text-center">
-                    <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="mailto:taritaritazutazu@gmail.com" class="bg-gray-800/50 rounded-2xl p-8 text-center hover:bg-gray-800 transition group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
                     </div>
-                    <h3 class="font-bold mb-2">メール</h3>
-                    <p class="text-gray-400 text-sm">24時間以内にご返信いたします</p>
-                </div>
-                <div class="bg-gray-800/50 rounded-2xl p-6 text-center">
-                    <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    <h3 class="font-bold text-xl mb-3">メール</h3>
+                    <p class="text-purple-400 group-hover:text-purple-300 transition">taritaritazutazu@gmail.com</p>
+                </a>
+                <a href="tel:080-1264-8634" class="bg-gray-800/50 rounded-2xl p-8 text-center hover:bg-gray-800 transition group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                         </svg>
                     </div>
-                    <h3 class="font-bold mb-2">対応時間</h3>
-                    <p class="text-gray-400 text-sm">平日 10:00 - 19:00</p>
-                </div>
+                    <h3 class="font-bold text-xl mb-3">電話</h3>
+                    <p class="text-purple-400 group-hover:text-purple-300 transition">080-1264-8634</p>
+                </a>
+                <a href="https://www.chatwork.com/takana7" target="_blank" rel="noopener noreferrer" class="bg-gray-800/50 rounded-2xl p-8 text-center hover:bg-gray-800 transition group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Chatwork</h3>
+                    <p class="text-purple-400 group-hover:text-purple-300 transition">Chatworkで連絡</p>
+                </a>
             </div>
         </div>
     </section>

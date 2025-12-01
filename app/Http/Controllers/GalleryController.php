@@ -23,10 +23,10 @@ class GalleryController extends Controller
         $viewMap = [
             'colorful' => 'gallery-colorful',
             'minimal' => 'gallery-minimal',
-            'default' => 'gallery',
+            'videographer' => 'gallery',
         ];
 
-        $view = $viewMap[$design] ?? 'gallery';
+        $view = $viewMap[$design] ?? 'gallery-colorful';
 
         return view($view, compact('videos', 'category', 'design'));
     }

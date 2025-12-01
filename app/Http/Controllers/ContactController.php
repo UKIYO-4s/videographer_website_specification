@@ -8,11 +8,21 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $plans = PricingPlan::active()->orderBy('display_order')->get();
 
-        return view('contact', compact('plans'));
+        $design = $request->query('design', 'default');
+
+        $viewMap = [
+            'colorful' => 'contact-colorful',
+            'minimal' => 'contact-minimal',
+            'videographer' => 'contact',
+        ];
+
+        $view = $viewMap[$design] ?? 'contact-colorful';
+
+        return view($view, compact('plans', 'design'));
     }
 
     public function store(Request $request)

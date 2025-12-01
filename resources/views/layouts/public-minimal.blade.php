@@ -25,16 +25,16 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
-                    <a href="{{ route('home') }}?design=minimal" class="text-2xl font-light tracking-tight">
+                    <a href="{{ route('home', ['design' => 'minimal']) }}" class="text-2xl font-light tracking-tight">
                         {{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }}
                     </a>
                 </div>
 
                 <div class="hidden md:flex items-center space-x-12">
-                    <a href="{{ route('home') }}?design=minimal" class="text-gray-500 hover:text-black transition font-light tracking-wide">Home</a>
-                    <a href="{{ route('gallery') }}?design=minimal" class="text-gray-500 hover:text-black transition font-light tracking-wide">Works</a>
-                    <a href="{{ route('pricing') }}?design=minimal" class="text-gray-500 hover:text-black transition font-light tracking-wide">Pricing</a>
-                    <a href="{{ route('contact') }}?design=minimal" class="px-6 py-3 bg-black text-white font-medium tracking-wide hover:bg-gray-800 transition">
+                    <a href="{{ route('home', ['design' => 'minimal']) }}" class="text-gray-500 hover:text-black transition font-light tracking-wide">Home</a>
+                    <a href="{{ route('gallery', ['design' => 'minimal']) }}" class="text-gray-500 hover:text-black transition font-light tracking-wide">Works</a>
+                    <a href="{{ route('pricing', ['design' => 'minimal']) }}" class="text-gray-500 hover:text-black transition font-light tracking-wide">Pricing</a>
+                    <a href="{{ route('contact', ['design' => 'minimal']) }}" class="px-6 py-3 bg-black text-white font-medium tracking-wide hover:bg-gray-800 transition">
                         Contact
                     </a>
                 </div>

@@ -31,10 +31,10 @@
                 </div>
 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="{{ route('home') }}" class="text-gray-300 hover:text-white transition {{ request()->routeIs('home') ? 'text-white' : '' }}">ホーム</a>
-                    <a href="{{ route('gallery') }}" class="text-gray-300 hover:text-white transition {{ request()->routeIs('gallery') ? 'text-white' : '' }}">実績</a>
-                    <a href="{{ route('pricing') }}" class="text-gray-300 hover:text-white transition {{ request()->routeIs('pricing') ? 'text-white' : '' }}">料金</a>
-                    <a href="{{ route('contact') }}" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-medium hover:from-purple-700 hover:to-pink-700 transition">
+                    <a href="{{ route('home', ['design' => 'videographer']) }}" class="text-gray-300 hover:text-white transition {{ request()->routeIs('home') ? 'text-white' : '' }}">ホーム</a>
+                    <a href="{{ route('gallery', ['design' => 'videographer']) }}" class="text-gray-300 hover:text-white transition {{ request()->routeIs('gallery') ? 'text-white' : '' }}">実績</a>
+                    <a href="{{ route('pricing', ['design' => 'videographer']) }}" class="text-gray-300 hover:text-white transition {{ request()->routeIs('pricing') ? 'text-white' : '' }}">料金</a>
+                    <a href="{{ route('contact', ['design' => 'videographer']) }}" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-medium hover:from-purple-700 hover:to-pink-700 transition">
                         お問い合わせ
                     </a>
                 </div>
@@ -51,10 +51,10 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
             <div class="px-4 pt-2 pb-4 space-y-2">
-                <a href="{{ route('home') }}" class="block py-2 text-gray-300 hover:text-white">ホーム</a>
-                <a href="{{ route('gallery') }}" class="block py-2 text-gray-300 hover:text-white">実績</a>
-                <a href="{{ route('pricing') }}" class="block py-2 text-gray-300 hover:text-white">料金</a>
-                <a href="{{ route('contact') }}" class="block py-2 text-purple-400 hover:text-purple-300">お問い合わせ</a>
+                <a href="{{ route('home', ['design' => 'videographer']) }}" class="block py-2 text-gray-300 hover:text-white">ホーム</a>
+                <a href="{{ route('gallery', ['design' => 'videographer']) }}" class="block py-2 text-gray-300 hover:text-white">実績</a>
+                <a href="{{ route('pricing', ['design' => 'videographer']) }}" class="block py-2 text-gray-300 hover:text-white">料金</a>
+                <a href="{{ route('contact', ['design' => 'videographer']) }}" class="block py-2 text-purple-400 hover:text-purple-300">お問い合わせ</a>
             </div>
         </div>
     </nav>
@@ -76,10 +76,10 @@
                 <div>
                     <h4 class="text-sm font-semibold text-gray-300 mb-4">ナビゲーション</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="{{ route('home') }}" class="hover:text-white transition">ホーム</a></li>
-                        <li><a href="{{ route('gallery') }}" class="hover:text-white transition">実績</a></li>
-                        <li><a href="{{ route('pricing') }}" class="hover:text-white transition">料金</a></li>
-                        <li><a href="{{ route('contact') }}" class="hover:text-white transition">お問い合わせ</a></li>
+                        <li><a href="{{ route('home', ['design' => 'videographer']) }}" class="hover:text-white transition">ホーム</a></li>
+                        <li><a href="{{ route('gallery', ['design' => 'videographer']) }}" class="hover:text-white transition">実績</a></li>
+                        <li><a href="{{ route('pricing', ['design' => 'videographer']) }}" class="hover:text-white transition">料金</a></li>
+                        <li><a href="{{ route('contact', ['design' => 'videographer']) }}" class="hover:text-white transition">お問い合わせ</a></li>
                     </ul>
                 </div>
                 <div>

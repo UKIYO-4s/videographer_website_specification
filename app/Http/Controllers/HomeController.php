@@ -20,10 +20,10 @@ class HomeController extends Controller
         $viewMap = [
             'colorful' => 'home-colorful',
             'minimal' => 'home-minimal',
-            'default' => 'home',
+            'videographer' => 'home',
         ];
 
-        $view = $viewMap[$design] ?? 'home';
+        $view = $viewMap[$design] ?? 'home-colorful';
 
         return view($view, compact('videos', 'plans', 'settings', 'design'));
     }

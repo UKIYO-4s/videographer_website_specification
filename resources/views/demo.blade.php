@@ -14,9 +14,9 @@
 <body class="bg-gray-100 min-h-screen py-12">
     <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-800 mb-4">デザインデモ選択</h1>
-            <p class="text-gray-600">{{ \App\Models\SiteSetting::get('owner_name', '内田敬') }}様のコーポレートサイト</p>
-            <p class="text-gray-500 text-sm mt-2">お好みのデザインをクリックしてプレビューしてください</p>
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">内田さんのコーポレートサイトデモ</h1>
+            <p class="text-gray-600">お好みのデザインをクリックしてプレビューしてください。</p>
+            <p class="text-gray-500 text-sm mt-2">どれがいい、またはこのデザインをこうして欲しいなどあれば後藤まで連絡お願いします。</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
@@ -40,7 +40,7 @@
                         <li>- 丸みのあるUI要素</li>
                         <li>- アニメーション効果</li>
                     </ul>
-                    <a href="{{ route('home') }}?design=colorful" class="block w-full py-3 bg-gradient-to-r from-pink-500 to-orange-400 text-white text-center rounded-full font-bold hover:opacity-90 transition">
+                    <a href="{{ route('home', ['design' => 'colorful']) }}" class="block w-full py-3 bg-gradient-to-r from-pink-500 to-orange-400 text-white text-center rounded-full font-bold hover:opacity-90 transition">
                         このデザインを見る
                     </a>
                 </div>
@@ -62,15 +62,14 @@
                         <li>- タイポグラフィ重視</li>
                         <li>- 余白を活かした設計</li>
                     </ul>
-                    <a href="{{ route('home') }}?design=minimal" class="block w-full py-3 bg-black text-white text-center font-medium hover:bg-gray-800 transition">
+                    <a href="{{ route('home', ['design' => 'minimal']) }}" class="block w-full py-3 bg-black text-white text-center font-medium hover:bg-gray-800 transition">
                         このデザインを見る
                     </a>
                 </div>
             </div>
 
-            <!-- Design 3: Videographer (Current) -->
-            <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2 ring-2 ring-purple-500">
-                <div class="absolute top-4 right-4 z-10 px-3 py-1 bg-purple-500 text-white text-xs font-bold rounded-full">現在のデザイン</div>
+            <!-- Design 3: Videographer -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2">
                 <div class="h-48 bg-gradient-to-br from-purple-900 via-gray-900 to-pink-900 flex items-center justify-center relative overflow-hidden">
                     <div class="absolute inset-0">
                         <div class="absolute top-1/4 left-1/4 w-32 h-32 bg-purple-600/30 rounded-full blur-2xl"></div>
@@ -88,7 +87,7 @@
                         <li>- ダークテーマ</li>
                         <li>- グラデーション効果</li>
                     </ul>
-                    <a href="{{ route('home') }}" class="block w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center rounded-full font-bold hover:opacity-90 transition">
+                    <a href="{{ route('home', ['design' => 'videographer']) }}" class="block w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center rounded-full font-bold hover:opacity-90 transition">
                         このデザインを見る
                     </a>
                 </div>
@@ -96,7 +95,7 @@
         </div>
 
         <div class="text-center mt-12">
-            <p class="text-gray-500 text-sm">Create By SD-create</p>
+            <p class="text-gray-500 text-sm">Created By SD-create</p>
         </div>
     </div>
 </body>

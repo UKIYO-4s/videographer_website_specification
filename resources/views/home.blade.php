@@ -147,7 +147,7 @@
                         </div>
                         <p class="text-gray-400 text-sm mb-6">{{ $plan->description }}</p>
                         @if($plan->features)
-                            <ul class="space-y-3 mb-8">
+                            <ul class="space-y-3">
                                 @foreach($plan->features as $feature)
                                     <li class="flex items-center text-sm text-gray-300">
                                         <svg class="w-5 h-5 text-purple-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -158,11 +158,17 @@
                                 @endforeach
                             </ul>
                         @endif
-                        <a href="{{ route('contact') }}" class="block text-center py-3 border-2 border-purple-500 rounded-full text-purple-400 font-semibold hover:bg-purple-500 hover:text-white transition">
-                            お問い合わせ
-                        </a>
                     </div>
                 @endforeach
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="{{ route('contact') }}" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition transform hover:scale-105">
+                    お問い合わせはこちら
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>

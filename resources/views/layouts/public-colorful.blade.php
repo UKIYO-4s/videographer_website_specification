@@ -59,16 +59,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="{{ route('home') }}?design=colorful" class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-orange-500 to-yellow-500">
+                    <a href="{{ route('home', ['design' => 'colorful']) }}" class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-orange-500 to-yellow-500">
                         {{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }}
                     </a>
                 </div>
 
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="{{ route('home') }}?design=colorful" class="text-gray-700 hover:text-pink-500 transition font-medium">ホーム</a>
-                    <a href="{{ route('gallery') }}?design=colorful" class="text-gray-700 hover:text-pink-500 transition font-medium">実績</a>
-                    <a href="{{ route('pricing') }}?design=colorful" class="text-gray-700 hover:text-pink-500 transition font-medium">料金</a>
-                    <a href="{{ route('contact') }}?design=colorful" class="px-6 py-2 bg-gradient-to-r from-pink-500 via-orange-500 to-yellow-500 rounded-full text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition">
+                    <a href="{{ route('home', ['design' => 'colorful']) }}" class="text-gray-700 hover:text-pink-500 transition font-medium">ホーム</a>
+                    <a href="{{ route('gallery', ['design' => 'colorful']) }}" class="text-gray-700 hover:text-pink-500 transition font-medium">実績</a>
+                    <a href="{{ route('pricing', ['design' => 'colorful']) }}" class="text-gray-700 hover:text-pink-500 transition font-medium">料金</a>
+                    <a href="{{ route('contact', ['design' => 'colorful']) }}" class="px-6 py-2 bg-gradient-to-r from-pink-500 via-orange-500 to-yellow-500 rounded-full text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition">
                         お問い合わせ
                     </a>
                 </div>

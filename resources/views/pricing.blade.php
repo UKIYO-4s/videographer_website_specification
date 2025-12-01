@@ -18,35 +18,55 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                @foreach($plans as $index => $plan)
-                    <div class="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-purple-500 transition {{ $index === 0 ? 'md:scale-105 border-purple-500 lg:col-span-1' : '' }}">
-                        @if($index === 0)
-                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                                <span class="px-4 py-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-sm font-semibold">人気No.1</span>
+            @php
+                $categoryIcons = [
+                    '編集' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>',
+                    '撮影' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>',
+                    'デザイン' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>',
+                    'SNS運用' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>',
+                ];
+                $categoryOrder = ['編集', '撮影', 'デザイン', 'SNS運用'];
+            @endphp
+
+            @foreach($categoryOrder as $category)
+                @if(isset($plansByCategory[$category]))
+                    <div class="mb-16">
+                        <div class="flex items-center justify-center gap-3 mb-8">
+                            <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    {!! $categoryIcons[$category] ?? '' !!}
+                                </svg>
                             </div>
-                        @endif
-                        <h3 class="text-xl font-bold mb-2">{{ $plan->name }}</h3>
-                        <div class="flex items-baseline mb-6">
-                            <span class="text-4xl font-bold text-purple-400">{{ $plan->formatted_price }}</span>
-                            <span class="text-gray-400 ml-2">/ {{ $plan->unit }}</span>
+                            <h2 class="text-2xl font-bold">{{ $category }}</h2>
                         </div>
-                        <p class="text-gray-400 text-sm mb-6">{{ $plan->description }}</p>
-                        @if($plan->features)
-                            <ul class="space-y-3">
-                                @foreach($plan->features as $feature)
-                                    <li class="flex items-start text-sm text-gray-300">
-                                        <svg class="w-5 h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                        </svg>
-                                        {{ $feature }}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        @endif
+
+                        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                            @foreach($plansByCategory[$category] as $plan)
+                                <div class="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-purple-500 transition">
+                                    <h3 class="text-xl font-bold mb-2">{{ $plan->name }}</h3>
+                                    <div class="flex items-baseline mb-4">
+                                        <span class="text-3xl font-bold text-purple-400">{{ $plan->formatted_price }}</span>
+                                        <span class="text-gray-400 ml-2">/ {{ $plan->unit }}</span>
+                                    </div>
+                                    <p class="text-gray-400 text-sm mb-4">{{ $plan->description }}</p>
+                                    @if($plan->features)
+                                        <ul class="space-y-2">
+                                            @foreach($plan->features as $feature)
+                                                <li class="flex items-start text-sm text-gray-300">
+                                                    <svg class="w-4 h-4 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                                    </svg>
+                                                    {{ $feature }}
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
-                @endforeach
-            </div>
+                @endif
+            @endforeach
 
             <!-- Single CTA Button -->
             <div class="text-center mt-12">

@@ -10,17 +10,18 @@ class PricingController extends Controller
     public function index(Request $request)
     {
         $plans = PricingPlan::active()->orderBy('display_order')->get();
+        $plansByCategory = $plans->groupBy('category');
 
         $design = $request->query('design', 'default');
 
         $viewMap = [
             'colorful' => 'pricing-colorful',
             'minimal' => 'pricing-minimal',
-            'default' => 'pricing',
+            'videographer' => 'pricing',
         ];
 
-        $view = $viewMap[$design] ?? 'pricing';
+        $view = $viewMap[$design] ?? 'pricing-colorful';
 
-        return view($view, compact('plans', 'design'));
+        return view($view, compact('plans', 'plansByCategory', 'design'));
     }
 }

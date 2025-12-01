@@ -12,9 +12,9 @@ use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\VideoController;
 use Illuminate\Support\Facades\Route;
 
-// Public Routes
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/demo', [HomeController::class, 'demo'])->name('demo');
+// Public Routes - トップページはデモ、各デザインは?design=で切り替え
+Route::get('/', [HomeController::class, 'demo'])->name('demo');
+Route::get('/preview', [HomeController::class, 'index'])->name('home');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/pricing', [PricingController::class, 'index'])->name('pricing');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');

@@ -33,7 +33,7 @@
                         </div>
                         <p class="text-gray-600 text-sm mb-6">{{ $plan->description }}</p>
                         @if($plan->features)
-                            <ul class="space-y-3 mb-8">
+                            <ul class="space-y-3">
                                 @foreach($plan->features as $feature)
                                     <li class="flex items-start text-sm text-gray-700">
                                         <svg class="w-5 h-5 text-pink-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,11 +44,18 @@
                                 @endforeach
                             </ul>
                         @endif
-                        <a href="{{ route('contact') }}?design=colorful" class="block text-center py-3 rounded-full font-bold transition {{ $index === 0 ? 'gradient-accent text-white shadow-lg shadow-pink-500/25 hover:shadow-xl' : 'border-2 border-pink-300 text-pink-500 hover:bg-pink-50' }}">
-                            お問い合わせ
-                        </a>
                     </div>
                 @endforeach
+            </div>
+
+            <!-- Single CTA Button -->
+            <div class="text-center mt-12">
+                <a href="{{ route('contact') }}?design=colorful" class="inline-flex items-center px-8 py-4 gradient-accent rounded-full text-white font-bold shadow-lg shadow-pink-500/25 hover:shadow-xl hover:shadow-pink-500/30 transform hover:scale-105 transition">
+                    お問い合わせはこちら
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
             </div>
 
             <!-- Equipment Info -->

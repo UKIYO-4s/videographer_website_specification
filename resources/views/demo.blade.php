@@ -96,7 +96,7 @@
         </div>
 
         <div class="text-center mt-12">
-            <p class="text-gray-500 text-sm">運営者: {{ \App\Models\SiteSetting::get('owner_name', '内田たかし') }} ({{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }})</p>
+            <p class="text-gray-500 text-sm">Create By SD-create</p>
         </div>
     </div>
 </body>

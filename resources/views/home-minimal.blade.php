@@ -1,6 +1,6 @@
 @extends('layouts.public-minimal')
 
-@section('title', $settings['site_title'] ?? 'Takashi Uchida | Videographer')
+@section('title', $settings['site_title'] ?? 'Takashi Uchita | Videographer')
 
 @section('content')
     <!-- Hero Section -->
@@ -10,7 +10,7 @@
                 <div>
                     <p class="text-gray-500 tracking-widest text-sm mb-4">VIDEOGRAPHER</p>
                     <h1 class="text-5xl md:text-7xl font-light tracking-tight text-gray-900 mb-6">
-                        {{ $settings['owner_name_en'] ?? 'Takashi Uchida' }}
+                        {{ $settings['owner_name_en'] ?? 'Takashi Uchita' }}
                     </h1>
                     <p class="text-xl text-gray-600 mb-2">{{ $settings['owner_name'] ?? '内田敬' }}</p>
                     <div class="w-16 h-0.5 bg-black my-8"></div>

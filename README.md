@@ -4,7 +4,7 @@
 
 ## 本番URL
 
-https://takashi-uchida.duckdns.org/
+https://takashi-uchita.duckdns.org/
 
 ## 技術スタック
 

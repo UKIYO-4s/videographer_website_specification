@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="{{ \App\Models\SiteSetting::get('site_description', '内田敬 - 動画編集・撮影サービス') }}">
 
-    <title>@yield('title', \App\Models\SiteSetting::get('site_title', 'Takashi Uchida | Videographer'))</title>
+    <title>@yield('title', \App\Models\SiteSetting::get('site_title', 'Takashi Uchita | Videographer'))</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700&display=swap" rel="stylesheet" />
@@ -26,7 +26,7 @@
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
                     <a href="{{ route('home', ['design' => 'minimal']) }}" class="text-2xl font-light tracking-tight">
-                        {{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }}
+                        {{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchita') }}
                     </a>
                 </div>
 
@@ -50,7 +50,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div>
-                    <p class="text-2xl font-light">{{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }}</p>
+                    <p class="text-2xl font-light">{{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchita') }}</p>
                     <p class="text-gray-500 mt-2">{{ \App\Models\SiteSetting::get('owner_name', '内田敬') }}</p>
                 </div>
                 <div class="mt-8 md:mt-0">

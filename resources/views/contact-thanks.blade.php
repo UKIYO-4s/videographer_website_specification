@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'お問い合わせ完了 | ' . \App\Models\SiteSetting::get('site_title', 'Kei Uchida'))
+@section('title', 'お問い合わせ完了 | ' . \App\Models\SiteSetting::get('site_title', 'Takashi Uchita'))
 
 @section('content')
     <section class="py-24 bg-gray-900 min-h-[60vh] flex items-center">

@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="{{ \App\Models\SiteSetting::get('site_description', '内田敬 - 動画編集・撮影サービス') }}">
 
-    <title>@yield('title', \App\Models\SiteSetting::get('site_title', 'Takashi Uchida | Videographer'))</title>
+    <title>@yield('title', \App\Models\SiteSetting::get('site_title', 'Takashi Uchita | Videographer'))</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
@@ -60,7 +60,7 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <a href="{{ route('home', ['design' => 'colorful']) }}" class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-orange-500 to-yellow-500">
-                        {{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }}
+                        {{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchita') }}
                     </a>
                 </div>
 
@@ -83,7 +83,7 @@
     <footer class="bg-white/90 backdrop-blur-sm py-12 mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-orange-500 to-yellow-500 mb-4">
-                {{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }}
+                {{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchita') }}
             </p>
             <p class="text-gray-600">{{ \App\Models\SiteSetting::get('owner_name', '内田敬') }} - 動画編集・撮影サービス</p>
             <p class="text-gray-400 text-sm mt-4">&copy; {{ date('Y') }} {{ \App\Models\SiteSetting::get('owner_name', '内田敬') }}. All rights reserved.</p>

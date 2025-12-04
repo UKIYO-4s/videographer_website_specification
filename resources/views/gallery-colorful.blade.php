@@ -1,6 +1,6 @@
 @extends('layouts.public-colorful')
 
-@section('title', '実績 | ' . \App\Models\SiteSetting::get('site_title', 'Takashi Uchida'))
+@section('title', '実績 | ' . \App\Models\SiteSetting::get('site_title', 'Takashi Uchita'))
 
 @section('content')
     <section class="py-24">

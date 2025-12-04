@@ -1,6 +1,6 @@
 @extends('layouts.public-colorful')
 
-@section('title', $settings['site_title'] ?? 'Takashi Uchida | Videographer')
+@section('title', $settings['site_title'] ?? 'Takashi Uchita | Videographer')
 
 @section('content')
     <!-- Hero Section -->
@@ -18,7 +18,7 @@
                         </span>
                     </div>
                     <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-                        {{ $settings['owner_name_en'] ?? 'Takashi Uchida' }}
+                        {{ $settings['owner_name_en'] ?? 'Takashi Uchita' }}
                     </h1>
                     <p class="text-xl text-gray-600 mb-2">{{ $settings['owner_name'] ?? '内田敬' }}</p>
                     <p class="text-lg text-gray-500 mb-6">Videographer / Video Editor</p>

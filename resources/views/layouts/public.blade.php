@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="{{ \App\Models\SiteSetting::get('site_description', '内田敬 - 動画編集・撮影サービス') }}">
 
-    <title>@yield('title', \App\Models\SiteSetting::get('site_title', 'Takashi Uchida | Videographer'))</title>
+    <title>@yield('title', \App\Models\SiteSetting::get('site_title', 'Takashi Uchita | Videographer'))</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
@@ -26,7 +26,7 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <a href="{{ route('home') }}" class="text-xl font-bold text-white hover:text-purple-400 transition">
-                        {{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }}
+                        {{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchita') }}
                     </a>
                 </div>
 
@@ -67,7 +67,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-lg font-bold mb-4">{{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }}</h3>
+                    <h3 class="text-lg font-bold mb-4">{{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchita') }}</h3>
                     <p class="text-gray-400 text-sm">
                         {{ \App\Models\SiteSetting::get('owner_name', '内田敬') }}<br>
                         動画編集・撮影サービス
@@ -93,7 +93,7 @@
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
                 <p>&copy; {{ date('Y') }} {{ \App\Models\SiteSetting::get('owner_name', '内田敬') }}. All rights reserved.</p>
-                <p class="mt-2 text-xs">運営者: {{ \App\Models\SiteSetting::get('owner_name', '内田敬') }} ({{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchida') }})</p>
+                <p class="mt-2 text-xs">運営者: {{ \App\Models\SiteSetting::get('owner_name', '内田敬') }} ({{ \App\Models\SiteSetting::get('owner_name_en', 'Takashi Uchita') }})</p>
             </div>
         </div>
     </footer>

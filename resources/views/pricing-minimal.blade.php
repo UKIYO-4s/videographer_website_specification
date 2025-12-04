@@ -1,6 +1,6 @@
 @extends('layouts.public-minimal')
 
-@section('title', '料金プラン | ' . \App\Models\SiteSetting::get('site_title', 'Takashi Uchida'))
+@section('title', '料金プラン | ' . \App\Models\SiteSetting::get('site_title', 'Takashi Uchita'))
 
 @section('content')
     <section class="py-24">

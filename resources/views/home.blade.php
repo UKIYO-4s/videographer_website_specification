@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', $settings['site_title'] ?? 'Takashi Uchida | Videographer')
+@section('title', $settings['site_title'] ?? 'Takashi Uchita | Videographer')
 
 @section('content')
     <!-- Hero Section -->
@@ -14,7 +14,7 @@
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400">
-                    {{ $settings['owner_name_en'] ?? 'Takashi Uchida' }}
+                    {{ $settings['owner_name_en'] ?? 'Takashi Uchita' }}
                 </span>
             </h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-4">
